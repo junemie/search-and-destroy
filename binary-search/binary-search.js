@@ -1,14 +1,17 @@
 "use strict";
 
 // Complete this algo
+
 const binarySearch = (array, target) => {
   //defining rootIndex
-  let rootIndex;
-  if (array.length % 2 === 1) {
-    rootIndex = Math.round(array.length - 1) / 2;
-  } else {
-    rootIndex = array.length / 2;
-  }
+  // let rootIndex;
+  // if (array.length % 2 === 1) {
+  //   rootIndex = Math.round(array.length - 1) / 2;
+  // } else {
+  //   rootIndex = array.length / 2;
+  // }
+
+  let rootIndx = Math.floor(array.length / 2);
   let currentRoot = array[rootIndex];
   // console.log(currentRoot, "CURRENT ROOT");
   let left = array.slice(0, rootIndex);
@@ -16,15 +19,16 @@ const binarySearch = (array, target) => {
   let right = array.slice(rootIndex);
 
   if (target === currentRoot) return true;
-  if (target > currentRoot) {
-    // let recursiveVal = binarySearch(left, target);
-    // console.log(recursiveVal);
-    // return recursiveVal;
-  } else {
-    // let recursiveVal = binarySearch(right, target);
-    // console.log(recursiveVal);
-    // return binarySearch(left, target);
-  }
+  if (array.length <= 1)
+    if (target > currentRoot) {
+      // let recursiveVal = binarySearch(left, target);
+      // console.log(recursiveVal);
+      // return recursiveVal;
+    } else {
+      // let recursiveVal = binarySearch(right, target);
+      // console.log(recursiveVal);
+      // return binarySearch(left, target);
+    }
 };
 
 /*
@@ -35,5 +39,13 @@ const binarySearch = (array, target) => {
 	How can we use other pieces of data, like pointers, to avoid slicing?
 
 */
+
+//root =
+//right =
+//left =
+
+const binarySearch = (array, target) => {
+  let rootIndx = Math.floor(array.length / 2);
+};
 
 module.exports = binarySearch;
