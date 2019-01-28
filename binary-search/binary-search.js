@@ -9,18 +9,21 @@ const binarySearch = (array, target) => {
   } else {
     rootIndex = array.length / 2;
   }
-  //base case
-  if (array[rootIndex] === target) {
-    return true;
-  } else if (target > array[rootIndex]) {
-    let right = array[rootIndex + 1];
-    // return binarySearch(array.slice(right), target);
+  let currentRoot = array[rootIndex];
+  // console.log(currentRoot, "CURRENT ROOT");
+  let left = array.slice(0, rootIndex);
+  // console.log(left, "LEFT");
+  let right = array.slice(rootIndex);
+
+  if (target === currentRoot) return true;
+  if (target > currentRoot) {
+    // let recursiveVal = binarySearch(left, target);
+    // console.log(recursiveVal);
+    // return recursiveVal;
   } else {
-    let left = array[rootIndex - 1];
-    console.log(left);
-    // console.log("left array slice", array.slice(0, rootIndex));
-    let recursiveVal = binarySearch(array.slice(0, rootIndex), target);
-    console.log(recursiveVal);
+    // let recursiveVal = binarySearch(right, target);
+    // console.log(recursiveVal);
+    // return binarySearch(left, target);
   }
 };
 
